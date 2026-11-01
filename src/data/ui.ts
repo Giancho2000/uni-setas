@@ -7,7 +7,7 @@ export const ui = {
   closeMenu: 'Cerrar menú',
   close: 'Cerrar',
   viewDetail: 'Ver detalle',
-  week: 'Semana',
+  week: 'Actividad',
   notDefined: 'Por definir',
   activityFields: {
     duration: 'Duración',
