@@ -1,6 +1,6 @@
 # Contract: Configuración central de rutas
 
-**Archivo**: `src/config/routes.ts` | **Consumidores**: `App.tsx` (router), `Navbar`, tests.
+**Archivo**: `src/config/routes.tsx` | **Consumidores**: `App.tsx` (router), `Navbar`, tests.
 
 ## Forma
 

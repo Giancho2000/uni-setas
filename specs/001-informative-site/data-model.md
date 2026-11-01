@@ -3,12 +3,12 @@
 **Feature**: `001-informative-site` | **Date**: 2026-11-01
 
 Todo el modelo vive en archivos TypeScript estáticos: tipos en `src/types/`, datos en `src/data/` y
-la configuración de rutas en `src/config/routes.ts`. No hay persistencia ni estados de servidor.
+la configuración de rutas en `src/config/routes.tsx`. No hay persistencia ni estados de servidor.
 Los identificadores y claves están en inglés; los valores visibles, en español de Colombia.
 
 ## AppRoute — `src/types/route.ts`
 
-Una sección navegable del sitio. Fuente: `src/config/routes.ts` (ver
+Una sección navegable del sitio. Fuente: `src/config/routes.tsx` (ver
 [contracts/routes-config.md](./contracts/routes-config.md)).
 
 | Campo | Tipo | Regla |

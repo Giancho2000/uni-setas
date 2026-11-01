@@ -16,7 +16,7 @@ Cada decisión sigue el formato Decision / Rationale / Alternatives considered.
 
 ## R2. Enrutamiento desde configuración central
 
-- **Decision**: React Router v6 con `createBrowserRouter`. `src/config/routes.ts` exporta un arreglo
+- **Decision**: React Router v6 con `createBrowserRouter`. `src/config/routes.tsx` exporta un arreglo
   `appRoutes: AppRoute[]` (path, label, element, `showInNav`, `end`). `App.tsx` construye el router
   mapeando ese arreglo como hijos de un `Layout` (Navbar + `<main>` + Footer), más una ruta comodín
   `*` para la página "no encontrada". La Navbar recorre el mismo arreglo filtrando `showInNav`.

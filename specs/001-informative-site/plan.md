@@ -51,7 +51,7 @@ ejecución salvo Google Fonts; WCAG 2.1 AA; sin scroll horizontal desde 320 px; 
 |-----------|----------------|--------|
 | I. Solo frontend | Vite genera `dist/` estático; sin API, BD ni auth; fallback de rutas por archivo de hosting (R3). | ✅ |
 | II. Contenido separado | `project.ts`, `problems.ts`, `activities.ts`, `ui.ts` en `src/data` con tipos en `src/types`; componentes solo reciben datos por props. | ✅ |
-| III. Configuración central | `src/config/routes.ts` alimenta router y navbar ([contrato](./contracts/routes-config.md)). | ✅ |
+| III. Configuración central | `src/config/routes.tsx` alimenta router y navbar ([contrato](./contracts/routes-config.md)). | ✅ |
 | IV. Imágenes desacopladas | `src/assets/images/activities/` + `getActivityImage` + `ImageWithFallback` con placeholder y `aspect-ratio` (R8). | ✅ |
 | V. Tokens de diseño | `src/styles/tokens.css` único; regla de revisión: sin hex/px de color o espaciado en CSS Modules (salvo `0` y `1px` de bordes vía token). | ✅ |
 | VI. Accesibilidad y responsive | Mobile-first, HTML semántico, contraste calculado (R4: verde hoja y ocre solo decorativos), tabs ARIA, modal con foco atrapado/devuelto y Escape (R6, R7), `lang="es-CO"`. | ✅ |
@@ -108,7 +108,7 @@ src/
 ├── main.tsx                   # monta RouterProvider, importa styles
 ├── App.tsx                    # createBrowserRouter a partir de appRoutes + ruta '*'
 ├── config/
-│   └── routes.ts              # appRoutes: única fuente de rutas y navbar
+│   └── routes.tsx             # appRoutes: única fuente de rutas y navbar
 ├── types/
 │   ├── route.ts
 │   ├── project.ts
