@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+
+.h1 {
+  font-size: var(--fs-3xl);
+}
+
+.h2 {
+  font-size: var(--fs-2xl);
+}
+
+.rule {
+  display: block;
+  width: var(--space-10);
+  height: var(--space-1);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-decor);
+}
+
+.subtitle {
+  max-width: var(--measure);
+  color: var(--color-text);
+  font-size: var(--fs-lg);
+}

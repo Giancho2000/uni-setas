@@ -1,0 +1,31 @@
+.problem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.problemTitle {
+  max-width: var(--measure);
+  font-size: var(--fs-xl);
+}
+
+.reading {
+  display: flex;
+  max-width: var(--measure);
+  flex-direction: column;
+  gap: var(--space-6);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.blockHeading {
+  padding-left: var(--space-3);
+  border-left: var(--focus-ring-width) solid var(--color-accent-decor);
+  font-size: var(--fs-lg);
+}

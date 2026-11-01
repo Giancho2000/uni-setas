@@ -1,0 +1,102 @@
+.primary,
+.secondary {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+/* Tab lists scroll horizontally inside their own box on small screens. */
+.scroller {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.tablist {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  gap: var(--space-2);
+}
+
+.tab {
+  flex-shrink: 0;
+  border: var(--border-width-strong) solid transparent;
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.tab:focus-visible {
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+.panel:focus-visible {
+  outline-offset: var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+/* Primary: problem selector (pills). */
+.primary .tablist {
+  padding: var(--space-1);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-alt);
+  width: auto;
+}
+
+.primary .tab {
+  flex: 1;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+}
+
+.primary .tab:hover {
+  background-color: var(--color-surface);
+}
+
+.primary .tab[aria-selected='true'] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: var(--fw-bold);
+}
+
+.primary > .panel {
+  padding-top: var(--space-7);
+}
+
+/* Secondary: section selector (underlined). */
+.secondary .tablist {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.secondary .tab {
+  margin-bottom: calc(-1 * var(--border-width));
+  padding: var(--space-2) var(--space-4);
+  border-bottom-width: var(--focus-ring-width);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.secondary .tab:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.secondary .tab[aria-selected='true'] {
+  border-bottom-color: var(--color-primary);
+  color: var(--color-heading);
+  font-weight: var(--fw-bold);
+}
+
+.secondary > .panel {
+  padding-top: var(--space-6);
+}
+
+@media (min-width: 40rem) {
+  .primary .tablist {
+    display: inline-flex;
+    min-width: 0;
+  }
+}
