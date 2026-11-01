@@ -1,0 +1,22 @@
+.footer {
+  margin-top: auto;
+  padding-block: var(--space-8);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.small {
+  font-size: var(--fs-sm);
+}

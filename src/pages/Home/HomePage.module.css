@@ -1,0 +1,115 @@
+.hero {
+  margin-top: calc(-1 * var(--space-8));
+  padding-block: var(--space-10);
+  background-color: var(--color-bg-alt);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.eyebrow {
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-badge-bg);
+  color: var(--color-text);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: var(--measure-title);
+  font-size: var(--fs-3xl);
+}
+
+.scientific {
+  color: var(--color-text-muted);
+  font-size: var(--fs-lg);
+}
+
+.objective {
+  max-width: var(--measure);
+  font-size: var(--fs-lg);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: var(--border-width-strong) solid transparent;
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.ctaIcon {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.secondary {
+  border-color: var(--color-secondary);
+  background-color: var(--color-surface);
+  color: var(--color-secondary);
+}
+
+.secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+}
+
+.pillars {
+  padding-top: var(--space-10);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 40rem) {
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

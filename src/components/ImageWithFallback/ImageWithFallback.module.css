@@ -1,0 +1,11 @@
+.frame {
+  overflow: hidden;
+  aspect-ratio: var(--image-aspect);
+  background-color: var(--color-bg);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

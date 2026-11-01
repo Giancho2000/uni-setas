@@ -1,0 +1,17 @@
+.page {
+  padding-block: var(--space-10);
+}
+
+.link {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: var(--color-primary-hover);
+}

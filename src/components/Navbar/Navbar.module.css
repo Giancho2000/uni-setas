@@ -1,0 +1,109 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-navbar);
+  background-color: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  min-height: var(--navbar-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+
+.brandIcon {
+  width: var(--icon-md);
+  height: var(--icon-md);
+  color: var(--color-primary);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-heading);
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--gutter) var(--space-5);
+  list-style: none;
+  background-color: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.menu[data-open='true'] {
+  display: flex;
+}
+
+.link {
+  display: block;
+  padding: var(--space-3) var(--space-3);
+  border-radius: var(--radius-sm);
+  border-bottom: var(--border-width-strong) solid transparent;
+  color: var(--color-text);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.link:hover {
+  background-color: var(--color-bg);
+}
+
+.active {
+  color: var(--color-heading);
+  font-weight: var(--fw-bold);
+  border-bottom-color: var(--color-primary);
+  background-color: var(--color-accent-decor-soft);
+}
+
+@media (min-width: 40rem) {
+  .toggle {
+    display: none;
+  }
+
+  .menu,
+  .menu[data-open='true'] {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2);
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .link {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  }
+}

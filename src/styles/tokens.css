@@ -1,0 +1,111 @@
+/*
+ * Design tokens — the single source of colors, typography, spacing, radii and shadows.
+ * Components MUST use these variables and never literal values (constitution V).
+ *
+ * Breakpoints (media queries cannot read custom properties, so they are documented here):
+ *   tablet  >= 40rem (640px)
+ *   desktop >= 64rem (1024px)
+ *
+ * WCAG contrast on cream (#F6F1E4), see research R4:
+ *   ink 12.61 · forest 6.78 · earth 5.16 · ink on ochre 5.93  -> allowed for text
+ *   leaf 2.93 · ochre 2.13                                     -> DECORATIVE ONLY
+ */
+:root {
+  /* Palette */
+  --color-forest: #2f5d3a;
+  --color-forest-dark: #234a2c;
+  --color-leaf: #6b9a4d;
+  --color-leaf-soft: #e3ecd8;
+  --color-earth: #8a5a3c;
+  --color-cream: #f6f1e4;
+  --color-cream-deep: #ece4cf;
+  --color-ochre: #c9a24b;
+  --color-ochre-soft: #f1e3bd;
+  --color-ink: #2b2b26;
+  --color-white: #ffffff;
+
+  /* Semantic colors */
+  --color-bg: var(--color-cream);
+  --color-bg-alt: var(--color-cream-deep);
+  --color-surface: var(--color-white);
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-earth);
+  --color-heading: var(--color-forest);
+  --color-link: var(--color-forest);
+  --color-focus: var(--color-forest);
+  --color-primary: var(--color-forest);
+  --color-primary-hover: var(--color-forest-dark);
+  --color-on-primary: var(--color-cream);
+  --color-secondary: var(--color-earth);
+  --color-accent-decor: var(--color-leaf);
+  --color-accent-decor-soft: var(--color-leaf-soft);
+  --color-badge-bg: var(--color-ochre);
+  --color-badge-soft: var(--color-ochre-soft);
+  --color-border: var(--color-cream-deep);
+  --color-border-strong: var(--color-earth);
+  --color-backdrop: rgb(43 43 38 / 0.6);
+
+  /* Typography */
+  --font-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --fs-2xl: clamp(1.5rem, 1.25rem + 1.2vw, 2rem);
+  --fs-3xl: clamp(1.875rem, 1.4rem + 2.4vw, 3rem);
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --lh-body: 1.7;
+  --lh-heading: 1.2;
+  --lh-tight: 1.4;
+  --tracking-wide: 0.04em;
+
+  /* Spacing scale */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
+  --space-8: 2.5rem;
+  --space-9: 3rem;
+  --space-10: 4rem;
+  --space-11: 6rem;
+
+  /* Borders, radii and shadows */
+  --border-width: 1px;
+  --border-width-strong: 2px;
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgb(43 43 38 / 0.06), 0 2px 6px rgb(43 43 38 / 0.06);
+  --shadow-md: 0 4px 12px rgb(43 43 38 / 0.1), 0 2px 4px rgb(43 43 38 / 0.06);
+  --shadow-lg: 0 16px 40px rgb(43 43 38 / 0.2);
+
+  /* Layout */
+  --measure: 70ch;
+  --measure-title: 20ch;
+  --container-max: 72rem;
+  --gutter: var(--space-4);
+  --navbar-height: 4rem;
+  --icon-sm: 1.25rem;
+  --icon-md: 1.75rem;
+  --icon-circle: 3.5rem;
+  --modal-max-width: 40rem;
+  --image-aspect: 16 / 10;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+
+  /* Layers */
+  --z-navbar: 100;
+  --z-modal: 1000;
+}
