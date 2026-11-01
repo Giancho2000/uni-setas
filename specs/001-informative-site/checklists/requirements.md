@@ -13,7 +13,7 @@
 
 ## Requirement Completeness
 
-- [ ] No [NEEDS CLARIFICATION] markers remain
+- [x] No [NEEDS CLARIFICATION] markers remain
 - [x] Requirements are testable and unambiguous
 - [x] Success criteria are measurable
 - [x] Success criteria are technology-agnostic (no implementation details)
@@ -31,5 +31,7 @@
 
 ## Notes
 
-- Iteración 1: queda pendiente FR-029 (origen del contenido de problemáticas y actividades).
+- Iteración 1: quedaba pendiente FR-029 (origen del contenido de problemáticas y actividades).
+- Iteración 2 (2026-11-01): FR-029 resuelto con supuesto (borrador revisable) al ejecutar
+  `/speckit-plan`, ya que la pregunta no fue respondida. Todos los ítems pasan.
 - Items marked incomplete require spec updates before `/speckit-clarify` or `/speckit-plan`

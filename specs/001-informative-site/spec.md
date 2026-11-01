@@ -198,10 +198,9 @@ apartados y leer el texto completo.
 - **FR-027**: Toda la funcionalidad MUST ser operable con teclado, con indicador de foco visible.
 - **FR-028**: Los pares de color de texto y fondo MUST cumplir el contraste mínimo WCAG 2.1 AA.
 - **FR-029**: El contenido textual completo de las dos problemáticas y el detalle de las cuatro
-  actividades MUST provenir de
-  [NEEDS CLARIFICATION: ¿El equipo ya tiene redactados los textos de las problemáticas (cinco
-  apartados cada una) y el detalle de las actividades (duración, estrategia, canales, responsable,
-  recursos, indicadores), o se debe redactar un borrador inicial para que el equipo lo revise?]
+  actividades MUST cargarse inicialmente como un borrador redactado a partir de la descripción del
+  proyecto, identificado como pendiente de revisión por el equipo, y reemplazable editando solo los
+  datos. *(Supuesto adoptado en `/speckit-plan`: la pregunta de aclaración no fue respondida.)*
 
 ### Key Entities *(include if feature involves data)*
 
