@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
+import { ui } from '../../data/ui';
 import type { Activity } from '../../types';
 import { placeholderImage } from '../../utils/getActivityImage';
 import { ImageWithFallback } from '../ImageWithFallback/ImageWithFallback';
@@ -55,7 +56,7 @@ describe('ActivityCard', () => {
 
   it('shows week, title as heading and summary', () => {
     render(<ActivityCard activity={baseActivity} onSelect={vi.fn()} />);
-    expect(screen.getByText('Semana 2')).toBeInTheDocument();
+    expect(screen.getByText(`${ui.week} 2`)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Actividad de prueba/ })).toBeInTheDocument();
     expect(screen.getByText('Resumen corto de la actividad.')).toBeInTheDocument();
   });
@@ -64,7 +65,9 @@ describe('ActivityCard', () => {
     const user = userEvent.setup();
     const onSelect = vi.fn();
     render(<ActivityCard activity={baseActivity} onSelect={onSelect} />);
-    const button = screen.getByRole('button', { name: /Semana 2.*Actividad de prueba/ });
+    const button = screen.getByRole('button', {
+      name: new RegExp(`${ui.week} 2.*Actividad de prueba`),
+    });
 
     await user.click(button);
     expect(onSelect).toHaveBeenCalledWith(baseActivity);

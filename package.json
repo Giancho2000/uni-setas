@@ -13,7 +13,7 @@
     "typecheck": "tsc -b --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "build:gh-pages": "tsc -b && vite build --base=/uni-seta/ && node scripts/copy-404.mjs"
+    "build:gh-pages": "tsc -b && vite build --base=/uni-setas/ && node scripts/copy-404.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.66.0",
