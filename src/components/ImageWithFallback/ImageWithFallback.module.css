@@ -1,7 +1,7 @@
 .frame {
   overflow: hidden;
   aspect-ratio: var(--image-aspect);
-  background-color: var(--color-bg);
+  background-color: var(--color-mint);
 }
 
 .image {

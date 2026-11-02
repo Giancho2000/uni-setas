@@ -2,15 +2,35 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin-bottom: var(--space-7);
+  margin-bottom: var(--space-8);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-ochre-ink);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: var(--space-7);
+  height: var(--border-width-strong);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-ochre);
 }
 
 .h1 {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-4xl);
 }
 
 .h2 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-3xl);
 }
 
 .rule {
@@ -18,7 +38,7 @@
   width: var(--space-10);
   height: var(--space-1);
   border-radius: var(--radius-pill);
-  background-color: var(--color-accent-decor);
+  background-color: var(--color-ochre);
 }
 
 .subtitle {

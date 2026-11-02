@@ -26,6 +26,6 @@
 
 .blockHeading {
   padding-left: var(--space-3);
-  border-left: var(--focus-ring-width) solid var(--color-accent-decor);
+  border-left: var(--focus-ring-width) solid var(--color-ochre);
   font-size: var(--fs-lg);
 }
