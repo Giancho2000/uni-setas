@@ -79,8 +79,12 @@ usan verde bosque, tierra o el color de texto principal.
 - **Netlify**: comando `npm run build`, carpeta `dist`. El archivo `public/_redirects` permite
   recargar cualquier ruta.
 - **Vercel**: igual que Netlify; `vercel.json` configura la redirección a `index.html`.
-- **GitHub Pages**: `npm run build:gh-pages` y publica `dist/`. El script usa `--base=/uni-seta/`;
-  cámbialo en `package.json` por el nombre real del repositorio. También copia `index.html` a
+- **GitHub Pages (automático)**: el workflow `.github/workflows/deploy.yml` se ejecuta en cada
+  push a `main`: corre lint, formato, tipos y pruebas, construye con la ruta base del repositorio
+  (`/uni-setas/`) y publica el sitio en `https://giancho2000.github.io/uni-setas/`. Requiere una
+  sola vez: **Settings → Pages → Build and deployment → Source: GitHub Actions**. También puede
+  lanzarse a mano desde la pestaña **Actions → Deploy to GitHub Pages → Run workflow**.
+- **GitHub Pages (local)**: `npm run build:gh-pages` genera `dist/` con la misma ruta base y un
   `404.html` para que funcionen los enlaces directos.
 
 ## Documentación del proyecto
