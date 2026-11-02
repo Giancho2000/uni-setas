@@ -9,6 +9,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--navbar-height) + var(--space-4));
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -38,6 +39,83 @@ h4 {
   line-height: var(--lh-heading);
   font-weight: var(--fw-bold);
   overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+h3 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+}
+
+/* Scroll reveal (useReveal). Without JS or with reduced motion content is visible. */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.reveal.isRevealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Shared buttons/links styled as buttons */
+.btn {
+  display: inline-flex;
+  min-height: var(--target-size);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: var(--border-width-strong) solid transparent;
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) ease;
+}
+
+.btn:hover {
+  transform: translateY(var(--lift));
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:active {
+  transform: none;
+}
+
+.btnPrimary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btnSecondary {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.btnSecondary:hover {
+  background-color: var(--color-mint);
+}
+
+.btnIcon {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.btn:hover .btnIcon {
+  transform: translateX(var(--space-1));
 }
 
 p,

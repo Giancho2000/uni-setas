@@ -7,7 +7,8 @@ problemáticas que lo originan y las actividades del plan de trabajo.
 Es una aplicación de una sola página (SPA) estática: no tiene backend, base de datos ni inicio de
 sesión. Todo el contenido vive en archivos dentro de `src/data/`.
 
-> ⚠️ Los textos de `src/data/project.ts`, `src/data/problems.ts` y `src/data/activities.ts` son un
+> ⚠️ Los textos de `src/data/project.ts`, `src/data/slides.ts`, `src/data/problems.ts` y
+> `src/data/activities.ts` son un
 > **borrador pendiente de revisión** por el equipo (cada archivo empieza con `// DRAFT`).
 
 ## Requisitos
@@ -34,7 +35,8 @@ Antes de integrar cambios, `lint`, `format:check`, `typecheck` y `test` deben pa
 
 | Qué quieres cambiar                                                | Archivo                  |
 | ------------------------------------------------------------------ | ------------------------ |
-| Nombre, objetivo y pilares del Inicio                              | `src/data/project.ts`    |
+| Inicio: por qué, quién, objetivos, indicadores, recursos, pilares  | `src/data/project.ts`    |
+| Diapositivas del slider del Inicio (título, frase, foto)           | `src/data/slides.ts`     |
 | Problemáticas (análisis local, nacional, global, causas y efectos) | `src/data/problems.ts`   |
 | Actividades del plan de trabajo                                    | `src/data/activities.ts` |
 | Textos de la interfaz (menú, botones, etiquetas)                   | `src/data/ui.ts`         |
@@ -52,6 +54,26 @@ campo obligatorio.
 Si el nombre no coincide con ningún archivo, la tarjeta muestra la imagen neutra por defecto y, en
 modo desarrollo, la consola muestra una advertencia. Formatos admitidos: png, jpg, jpeg, webp, avif
 y svg.
+
+## Agregar fotos del slider y del Inicio
+
+| Dónde                      | Carpeta                     | Medidas recomendadas            | Dato que se edita                          |
+| -------------------------- | --------------------------- | ------------------------------- | ------------------------------------------ |
+| Slider (5 diapositivas)    | `src/assets/images/slider/` | 1920 × 800 px (12:5), ≤ ~300 KB | `image` de cada diapositiva en `slides.ts` |
+| Imagen de apoyo de sección | `src/assets/images/home/`   | 1200 × 800 px (3:2)             | `sectionImages` en `project.ts`            |
+
+Formatos: WebP (recomendado) o JPG. Ejemplo: copia `slide-1.webp` en `src/assets/images/slider/` y
+cambia `image: null` por `image: 'slide-1.webp'`. Las fotos se recortan para llenar su espacio
+(centradas), así que conviene dejar el motivo principal en el centro. En el slider el texto va a la
+izquierda, sobre un velo verde oscuro que garantiza su contraste.
+
+Mientras no haya foto, cada espacio muestra el fondo neutro del sitio sin descuadrar el diseño.
+
+## Editar las metas de los indicadores
+
+En `src/data/project.ts`, cada indicador tiene un campo `target`. Para fijar una meta, cambia
+`target: null` por, por ejemplo, `target: { value: '60', detail: 'bolsas sembradas' }`. Mientras
+sea `null`, el sitio muestra "Por definir con el grupo".
 
 ## Agregar una sección nueva
 
@@ -89,5 +111,6 @@ usan verde bosque, tierra o el color de texto principal.
 
 ## Documentación del proyecto
 
-La especificación, el plan técnico y las tareas están en `specs/001-informative-site/`, y los
+La especificación, el plan técnico y las tareas están en `specs/001-informative-site/` (sitio base)
+y `specs/002-home-redesign/` (rediseño del Inicio), y los
 principios del proyecto en `.specify/memory/constitution.md`.

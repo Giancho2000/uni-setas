@@ -4,9 +4,20 @@
   gap: var(--space-5);
 }
 
+.item {
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border-width) solid var(--color-border-soft);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 .item dt {
   margin-bottom: var(--space-1);
-  color: var(--color-text-muted);
+  color: var(--color-ochre-ink);
+  letter-spacing: var(--tracking-wide);
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
   text-transform: uppercase;

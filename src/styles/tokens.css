@@ -108,4 +108,71 @@
   /* Layers */
   --z-navbar: 100;
   --z-modal: 1000;
+
+  /* ---- 002 Home redesign: derived tints (research R2) ---- */
+  --color-mint: #eef3e6; /* very light green surface: ink 12.60 · forest 6.77 · earth 5.15 */
+  --color-surface-raised: var(--color-white);
+  --color-border-soft: rgb(47 93 58 / 0.12);
+  --color-ochre-ink: #7a5c16; /* ochre for text: 5.53 on cream */
+  --color-overlay: #16301f;
+  --color-on-overlay: var(--color-cream);
+  --color-focus-on-dark: var(--color-ochre); /* 5.93 on overlay */
+  --color-navbar-glass: rgb(246 241 228 / 0.88);
+  --color-footer-text-soft: rgb(246 241 228 / 0.85);
+  --color-divider-on-dark: rgb(246 241 228 / 0.2);
+  /*
+   * Desktop: slide text lives in the left ~45% of the width, where the overlay is >= 0.8
+   * (cream >= 6.68 over a white photo). Mobile/tablet: uniform overlay >= 0.78.
+   */
+  --gradient-slide: linear-gradient(
+    90deg,
+    rgb(22 48 31 / 0.85) 0%,
+    rgb(22 48 31 / 0.8) 50%,
+    rgb(22 48 31 / 0.3) 80%,
+    rgb(22 48 31 / 0.1) 100%
+  );
+  --overlay-mobile: linear-gradient(rgb(22 48 31 / 0.78), rgb(22 48 31 / 0.85));
+  --text-shadow-overlay: 0 1px 2px rgb(22 48 31 / 0.6);
+  --blur-glass: 12px;
+
+  /* Radii, elevation */
+  --radius-card: 1.25rem;
+  --radius-xl: 1.5rem;
+  --shadow-soft: 0 1px 2px rgb(47 93 58 / 0.05), 0 8px 24px rgb(47 93 58 / 0.07);
+  --shadow-hover: 0 2px 4px rgb(47 93 58 / 0.06), 0 16px 36px rgb(47 93 58 / 0.12);
+  --lift: -2px;
+
+  /* Fluid type scale */
+  --fs-4xl: clamp(2.125rem, 1.6rem + 2.6vw, 3.5rem);
+  --fs-display: clamp(2.25rem, 1.5rem + 3.6vw, 4.25rem);
+  --fw-medium: 500;
+  --tracking-eyebrow: 0.12em;
+
+  /* Motion tokens */
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-distance: 12px;
+
+  /* Media and layout */
+  --slider-ratio: 12 / 5;
+  --slider-min-h: 26.25rem; /* 420px */
+  --slider-fluid-h: 41.667vw; /* 12:5 of the viewport width */
+  --bullet-offset: 0.45em;
+  --slider-max-h: 85vh;
+  --support-ratio: 3 / 2;
+  --section-space: clamp(4rem, 3rem + 4vw, 7rem);
+  --target-size: 2.75rem; /* 44px */
+  --dot-size: 0.625rem;
+  --dot-active-width: 1.75rem;
+  --measure-short: 46ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --reveal-distance: 0;
+    --lift: 0;
+  }
 }

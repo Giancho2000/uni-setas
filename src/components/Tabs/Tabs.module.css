@@ -19,6 +19,7 @@
 }
 
 .tab {
+  min-height: var(--target-size);
   flex-shrink: 0;
   border: var(--border-width-strong) solid transparent;
   background-color: transparent;
@@ -26,8 +27,8 @@
   font-weight: var(--fw-semibold);
   white-space: nowrap;
   transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast);
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
 }
 
 .tab:focus-visible {
@@ -43,7 +44,8 @@
 .primary .tablist {
   padding: var(--space-1);
   border-radius: var(--radius-pill);
-  background-color: var(--color-bg-alt);
+  border: var(--border-width) solid var(--color-border-soft);
+  background-color: var(--color-mint);
   width: auto;
 }
 
@@ -54,7 +56,7 @@
 }
 
 .primary .tab:hover {
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-raised);
 }
 
 .primary .tab[aria-selected='true'] {
@@ -81,17 +83,28 @@
 }
 
 .secondary .tab:hover {
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-mint);
 }
 
 .secondary .tab[aria-selected='true'] {
-  border-bottom-color: var(--color-primary);
+  border-bottom-color: var(--color-ochre);
   color: var(--color-heading);
   font-weight: var(--fw-bold);
 }
 
 .secondary > .panel {
-  padding-top: var(--space-6);
+  margin-top: var(--space-5);
+  padding: var(--space-6);
+  border: var(--border-width) solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 40rem) {
+  .secondary > .panel {
+    padding: var(--space-8);
+  }
 }
 
 @media (min-width: 40rem) {

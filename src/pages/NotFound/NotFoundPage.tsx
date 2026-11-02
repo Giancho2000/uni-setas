@@ -7,7 +7,7 @@ export function NotFoundPage() {
   return (
     <div className={`container ${styles.page}`}>
       <SectionTitle as="h1" title={ui.notFound.title} subtitle={ui.notFound.text} />
-      <Link to="/" className={styles.link}>
+      <Link to="/" className="btn btnPrimary">
         {ui.notFound.backHome}
       </Link>
     </div>
