@@ -17,7 +17,7 @@
 
 .main {
   flex: 1;
-  padding-block: var(--space-8) var(--space-10);
+  padding-block: var(--space-10) var(--section-space);
 }
 
 .main:focus {
