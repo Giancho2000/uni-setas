@@ -6,10 +6,21 @@ interface ImageWithFallbackProps {
   alt: string;
   fallbackSrc: string;
   className?: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
 }
 
 /** Image that keeps its aspect ratio and switches to `fallbackSrc` if loading fails. */
-export function ImageWithFallback({ src, alt, fallbackSrc, className }: ImageWithFallbackProps) {
+export function ImageWithFallback({
+  src,
+  alt,
+  fallbackSrc,
+  className,
+  width,
+  height,
+  loading = 'lazy',
+}: ImageWithFallbackProps) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const hasFailed = failedSrc === src;
   const currentSrc = hasFailed ? fallbackSrc : src;
@@ -20,7 +31,9 @@ export function ImageWithFallback({ src, alt, fallbackSrc, className }: ImageWit
         className={styles.image}
         src={currentSrc}
         alt={hasFailed ? '' : alt}
-        loading="lazy"
+        width={width}
+        height={height}
+        loading={loading}
         decoding="async"
         onError={() => {
           if (!hasFailed && src !== fallbackSrc) setFailedSrc(src);

@@ -4,11 +4,12 @@ import type { Slide } from '../types';
 /**
  * Slides of the Home carousel, in display order.
  * Photos: 1920 × 800 px (12:5), WebP or JPG, up to ~300 KB, inside `src/assets/images/slider/`.
+ * `image` is the base file name without extension (e.g. `slide-1`); a missing file shows the placeholder.
  */
 export const slides: Slide[] = [
   {
     id: 'huerta',
-    image: null,
+    image: 'slide-1',
     alt: 'Huerta comunitaria de setas orellanas',
     title: 'Una huerta que crece en comunidad',
     caption:
@@ -16,7 +17,7 @@ export const slides: Slide[] = [
   },
   {
     id: 'sustrato',
-    image: null,
+    image: 'slide-2',
     alt: 'Residuos agrícolas preparados como sustrato',
     title: 'Del residuo al alimento',
     caption:
@@ -24,7 +25,7 @@ export const slides: Slide[] = [
   },
   {
     id: 'capacitacion',
-    image: null,
+    image: 'slide-3',
     alt: 'Taller de capacitación con el grupo comunitario',
     title: 'Aprender haciendo',
     caption:
@@ -32,7 +33,7 @@ export const slides: Slide[] = [
   },
   {
     id: 'comunidad',
-    image: null,
+    image: 'slide-4',
     alt: 'Integrantes del grupo construyendo la estantería',
     title: 'Trabajo participativo',
     caption:
@@ -40,7 +41,7 @@ export const slides: Slide[] = [
   },
   {
     id: 'cosecha',
-    image: null,
+    image: 'slide-5',
     alt: 'Setas orellanas listas para cosechar',
     title: 'Hacia la primera cosecha',
     caption: 'Un primer ciclo que siembra las bases de nuevos ingresos para las familias.',

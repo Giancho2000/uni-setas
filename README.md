@@ -2,7 +2,8 @@
 
 Sitio web informativo del proyecto de responsabilidad social universitaria (UNIMINUTO)
 **Huerta comunitaria de setas orellanas (_Pleurotus ostreatus_)**. Presenta el proyecto, las
-problemáticas que lo originan y las actividades del plan de trabajo.
+problemáticas que lo originan, las actividades del plan de trabajo y su contribución local a los
+Objetivos de Desarrollo Sostenible (vista **ODS**, en `/ods`).
 
 Es una aplicación de una sola página (SPA) estática: no tiene backend, base de datos ni inicio de
 sesión. Todo el contenido vive en archivos dentro de `src/data/`.
@@ -39,35 +40,31 @@ Antes de integrar cambios, `lint`, `format:check`, `typecheck` y `test` deben pa
 | Diapositivas del slider del Inicio (título, frase, foto)           | `src/data/slides.ts`     |
 | Problemáticas (análisis local, nacional, global, causas y efectos) | `src/data/problems.ts`   |
 | Actividades del plan de trabajo                                    | `src/data/activities.ts` |
+| ODS: niveles, metas, actividades e indicadores vinculados          | `src/data/sdg.ts`        |
 | Textos de la interfaz (menú, botones, etiquetas)                   | `src/data/ui.ts`         |
 
 No es necesario tocar los componentes: basta con editar los datos. TypeScript avisará si falta un
 campo obligatorio.
 
-## Agregar la foto de una actividad
+## Agregar o cambiar fotos
 
-1. Copia la imagen (por ejemplo `capacitacion.jpg`) en `src/assets/images/activities/`.
-2. En `src/data/activities.ts`, busca la actividad y cambia `image: null` por
-   `image: 'capacitacion.jpg'`.
-3. Revisa que `imageAlt` describa bien la foto.
+Las fotos ya están conectadas a sus espacios: basta con copiar el archivo con el nombre esperado en
+su carpeta. Los datos guardan el **nombre base** sin extensión, así que funciona con `.webp`,
+`.jpg`, `.jpeg` o `.png`. Los nombres van en minúscula, sin espacios ni tildes (una prueba lo
+verifica).
 
-Si el nombre no coincide con ningún archivo, la tarjeta muestra la imagen neutra por defecto y, en
-modo desarrollo, la consola muestra una advertencia. Formatos admitidos: png, jpg, jpeg, webp, avif
-y svg.
+| Dónde                           | Carpeta                         | Nombres                          | Medidas recomendadas |
+| ------------------------------- | ------------------------------- | -------------------------------- | -------------------- |
+| Slider del Inicio               | `src/assets/images/slider/`     | `slide-1` … `slide-5`            | 1920 × 800 px (12:5) |
+| Imagen de apoyo de cada sección | `src/assets/images/home/`       | `proyecto`, `logros`, `recursos` | 1200 × 800 px (3:2)  |
+| Actividades (tarjeta y modal)   | `src/assets/images/activities/` | `semana-1` … `semana-4`          | 900 × 600 px (3:2)   |
+| Vista ODS                       | `src/assets/images/sdg/`        | `intro`, `ods-1`, `ods-2`, …     | 900 × 600 px (3:2)   |
 
-## Agregar fotos del slider y del Inicio
-
-| Dónde                      | Carpeta                     | Medidas recomendadas            | Dato que se edita                          |
-| -------------------------- | --------------------------- | ------------------------------- | ------------------------------------------ |
-| Slider (5 diapositivas)    | `src/assets/images/slider/` | 1920 × 800 px (12:5), ≤ ~300 KB | `image` de cada diapositiva en `slides.ts` |
-| Imagen de apoyo de sección | `src/assets/images/home/`   | 1200 × 800 px (3:2)             | `sectionImages` en `project.ts`            |
-
-Formatos: WebP (recomendado) o JPG. Ejemplo: copia `slide-1.webp` en `src/assets/images/slider/` y
-cambia `image: null` por `image: 'slide-1.webp'`. Las fotos se recortan para llenar su espacio
-(centradas), así que conviene dejar el motivo principal en el centro. En el slider el texto va a la
-izquierda, sobre un velo verde oscuro que garantiza su contraste.
-
-Mientras no haya foto, cada espacio muestra el fondo neutro del sitio sin descuadrar el diseño.
+Detalle completo en [`src/assets/images/README.md`](src/assets/images/README.md). Al cambiar una
+foto, revisa que su texto alternativo (`alt` o `imageAlt`) la describa. Las fotos se recortan
+para llenar su espacio (centradas); en el slider el texto va a la izquierda, sobre un velo verde
+oscuro que garantiza su contraste. Mientras falte una foto, su espacio muestra el fondo neutro del
+sitio sin descuadrar el diseño.
 
 ## Editar las metas de los indicadores
 
