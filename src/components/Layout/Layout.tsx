@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { ui } from '../../data/ui';
 import { Footer } from '../Footer/Footer';
@@ -19,7 +19,13 @@ export function Layout() {
       </a>
       <Navbar />
       <main id="main" tabIndex={-1} className={styles.main}>
-        <Outlet />
+        <Suspense
+          fallback={
+            <div className={styles.pageFallback} aria-busy="true" aria-label={ui.sdg.loading} />
+          }
+        >
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </>

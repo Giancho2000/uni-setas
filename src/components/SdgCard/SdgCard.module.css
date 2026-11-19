@@ -1,0 +1,116 @@
+.card {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-border-soft);
+  border-top: var(--space-1) solid var(--card-accent);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface-raised);
+  box-shadow: var(--shadow-soft);
+  transition:
+    box-shadow var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(var(--card-lift));
+}
+
+.card:has(:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.media {
+  aspect-ratio: var(--sdg-image-ratio);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.title {
+  font-size: var(--fs-lg);
+}
+
+.button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Stretch the click target over the whole card. */
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.button:focus-visible {
+  outline: none;
+}
+
+.level {
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-ochre-soft);
+  color: var(--color-text);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.level[data-long-term='true'] {
+  background-color: var(--color-bg-alt);
+}
+
+.summary {
+  flex: 1;
+  font-size: var(--fs-sm);
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-link);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+.moreIcon {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.card:hover .moreIcon,
+.card:focus-within .moreIcon {
+  transform: translateX(var(--space-1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .moreIcon {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within,
+  .card:hover .moreIcon,
+  .card:focus-within .moreIcon {
+    transform: none;
+  }
+}

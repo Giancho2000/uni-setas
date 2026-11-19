@@ -24,7 +24,7 @@ describe('Navbar', () => {
     const links = within(getNav()).getAllByRole('link');
     const expected = appRoutes.filter((route) => route.showInNav).map((route) => route.label);
     expect(links.map((link) => link.textContent)).toEqual(expected);
-    expect(expected).toEqual(['Inicio', 'Problemáticas', 'Actividades']);
+    expect(expected).toEqual(['Inicio', 'Problemáticas', 'Actividades', 'ODS']);
   });
 
   it('marks only the current route as active', () => {
@@ -79,6 +79,42 @@ describe('Navbar', () => {
       'aria-current',
       'page',
     );
+  });
+
+  it('marks ODS as the current page on /ods', () => {
+    renderNavbar('/ods');
+    const nav = within(getNav());
+    expect(nav.getByRole('link', { name: 'ODS' })).toHaveAttribute('aria-current', 'page');
+    expect(nav.getByRole('link', { name: 'Actividades' })).not.toHaveAttribute('aria-current');
+  });
+
+  it('lists ODS in the mobile menu, reachable by keyboard, and closes the menu on choose', async () => {
+    const user = userEvent.setup();
+    renderNavbar('/');
+    const button = screen.getByRole('button', { name: 'Abrir menú' });
+    await user.click(button);
+    for (let i = 0; i < 4; i += 1) await user.tab();
+    const odsLink = within(getNav()).getByRole('link', { name: 'ODS' });
+    expect(odsLink).toHaveFocus();
+    await user.keyboard('{Enter}');
+    expect(button).toHaveAttribute('aria-expanded', 'false');
+    expect(within(getNav()).getByRole('link', { name: 'ODS' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+  });
+
+  it('renders every link when more routes are added', () => {
+    const routes: AppRoute[] = Array.from({ length: 8 }, (_, index) => ({
+      id: `r${index}`,
+      path: index === 0 ? '/' : `/r${index}`,
+      label: `Opción ${index + 1}`,
+      element: null,
+      showInNav: true,
+      end: index === 0,
+    }));
+    renderNavbar('/', routes);
+    expect(within(getNav()).getAllByRole('link')).toHaveLength(8);
   });
 
   it('accepts injected routes and hides those with showInNav false', () => {

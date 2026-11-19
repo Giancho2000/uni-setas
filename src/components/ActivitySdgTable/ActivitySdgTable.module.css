@@ -1,0 +1,140 @@
+/* Mobile first: each row is a stacked card; no horizontal scroll. */
+.table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.caption {
+  display: block;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  text-align: left;
+}
+
+/* Column headers stay available to screen readers but are hidden visually on mobile. */
+.head {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.table tbody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.row {
+  display: block;
+  padding: var(--space-5);
+  border: var(--border-width) solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+
+.activity,
+.sdgs {
+  display: block;
+  text-align: left;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.week {
+  color: var(--color-ochre-ink);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.activityTitle {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-heading);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 40rem) {
+  .table {
+    display: table;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background-color: var(--color-surface-raised);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .caption {
+    display: table-caption;
+  }
+
+  .head {
+    position: static;
+    display: table-header-group;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  .head th {
+    padding: var(--space-4) var(--space-5);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    font-size: var(--fs-sm);
+    text-align: left;
+  }
+
+  .table tbody {
+    display: table-row-group;
+  }
+
+  .row {
+    display: table-row;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .row + .row > * {
+    border-top: var(--border-width) solid var(--color-border-soft);
+  }
+
+  .activity,
+  .sdgs {
+    display: table-cell;
+    padding: var(--space-5);
+    vertical-align: top;
+  }
+
+  .activity {
+    width: 38%;
+    margin: 0;
+  }
+
+  .week {
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+}

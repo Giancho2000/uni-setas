@@ -166,6 +166,34 @@
   --dot-size: 0.625rem;
   --dot-active-width: 1.75rem;
   --measure-short: 46ch;
+
+  /* ---- 003 SDG view: SDG accents (research R3) ----
+   * Used only as the identifying accent of each SDG (number badge, card border).
+   * `--sdg-N-on` is the text color over `--sdg-N`; every pair is >= 4.5:1 (WCAG AA):
+   *   1 white 4.52 · 2 sdg-ink 7.96 · 3 sdg-ink 5.25 · 4 white 5.91 · 8 white 7.63
+   *   12 sdg-ink 5.77 · 13 white 4.91 · 15 sdg-ink 7.45 · 17 white 9.65
+   */
+  --color-sdg-ink: #1a1a17;
+  --sdg-1: #e5243b;
+  --sdg-1-on: var(--color-white);
+  --sdg-2: #dda63a;
+  --sdg-2-on: var(--color-sdg-ink);
+  --sdg-3: #4c9f38;
+  --sdg-3-on: var(--color-sdg-ink);
+  --sdg-4: #c5192d;
+  --sdg-4-on: var(--color-white);
+  --sdg-8: #a21942;
+  --sdg-8-on: var(--color-white);
+  --sdg-12: #bf8b2e;
+  --sdg-12-on: var(--color-sdg-ink);
+  --sdg-13: #3f7e44;
+  --sdg-13-on: var(--color-white);
+  --sdg-15: #56c02b;
+  --sdg-15-on: var(--color-sdg-ink);
+  --sdg-17: #19486a;
+  --sdg-17-on: var(--color-white);
+  --card-lift: -4px;
+  --sdg-image-ratio: 3 / 2;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -174,5 +202,6 @@
     --duration-base: 0ms;
     --reveal-distance: 0;
     --lift: 0;
+    --card-lift: 0;
   }
 }

@@ -15,4 +15,11 @@ describe('SupportImage', () => {
     expect(image).toHaveAttribute('loading', 'lazy');
     expect(screen.getByText(ui.home.supportImagePending)).toBeInTheDocument();
   });
+
+  it('looks up the image in the given folder', () => {
+    const { container } = render(
+      <SupportImage folder="sdg" name="no-existe" alt="Foto del grupo comunitario" />,
+    );
+    expect(container.querySelector('img')).toHaveAttribute('src', placeholderImage);
+  });
 });

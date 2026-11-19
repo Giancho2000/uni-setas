@@ -111,11 +111,24 @@
     display: none;
   }
 
+  /* Extra items wrap onto a new line instead of overflowing (spec FR-003). */
+  .inner {
+    flex-wrap: wrap;
+    padding-block: var(--space-1);
+  }
+
+  .nav {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
   .menu,
   .menu[data-open='true'] {
     position: static;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     gap: var(--space-1);
     padding: 0;
     border: 0;

@@ -2,8 +2,8 @@
 import type { Activity } from '../types';
 
 /**
- * Work-plan activities. To add a real photo: copy the file to
- * `src/assets/images/activities/` and set `image: 'file-name.jpg'` (review `imageAlt`).
+ * Work-plan activities. Photos live in `src/assets/images/activities/` as `semana-<week>`;
+ * `image` is the base file name (extension optional). Review `imageAlt` when a photo changes.
  */
 export const activities: Activity[] = [
   {
@@ -12,8 +12,8 @@ export const activities: Activity[] = [
     title: 'Capacitación sobre el producto',
     summary:
       'Conocemos la seta orellana: sus características, su ciclo de cultivo, sus usos en la cocina y su valor en el mercado local.',
-    image: null,
-    imageAlt: 'Integrantes del grupo comunitario durante la capacitación sobre setas orellanas',
+    image: 'semana-1',
+    imageAlt: 'Integrantes del grupo comunitario durante una jornada de capacitación en una huerta',
     duration: '1 semana (dos sesiones presenciales de 3 horas)',
     strategy:
       'Taller teórico-práctico con lenguaje sencillo: presentación ilustrada sobre Pleurotus ostreatus, observación de setas frescas y diálogo de saberes para relacionar el cultivo con la experiencia agrícola de la comunidad.',
@@ -36,7 +36,7 @@ export const activities: Activity[] = [
     title: 'Concientización sobre la producción sostenible del producto',
     summary:
       'Reflexionamos sobre cómo producir sin dañar el entorno y cómo los residuos agrícolas pueden convertirse en sustrato y abono.',
-    image: null,
+    image: 'semana-2',
     imageAlt: 'Residuos agrícolas reunidos para preparar el sustrato de las setas',
     duration: '1 semana (una sesión de 3 horas y una visita de reconocimiento)',
     strategy:
@@ -64,8 +64,8 @@ export const activities: Activity[] = [
     title: 'Creación de la estructuración de la huerta',
     summary:
       'Adecuamos un espacio subutilizado como área de cultivo, con zonas de preparación, incubación y fructificación.',
-    image: null,
-    imageAlt: 'Espacio adecuado con estanterías para el cultivo de setas',
+    image: 'semana-3',
+    imageAlt: 'Espacio adecuado bajo techo, con camas de ladrillo, para el cultivo de setas',
     duration: '1 semana (jornadas de trabajo comunitario)',
     strategy:
       'Minga de trabajo para limpiar y adecuar el espacio elegido: control de luz, ventilación y humedad, instalación de estanterías con materiales reutilizados y señalización de las zonas de trabajo.',
@@ -89,8 +89,8 @@ export const activities: Activity[] = [
     title: 'Siembra del producto',
     summary:
       'Preparamos el sustrato, lo inoculamos con semilla de orellana y organizamos los turnos de cuidado hasta la primera cosecha.',
-    image: null,
-    imageAlt: 'Bolsas de sustrato inoculadas con semilla de setas orellanas',
+    image: 'semana-4',
+    imageAlt: 'Integrantes del proyecto pesan y depositan el material para la siembra de las setas',
     duration: '1 semana (siembra y seguimiento inicial)',
     strategy:
       'Práctica guiada paso a paso: picado, hidratación y pasteurización del sustrato, inoculación con semilla certificada, embolsado y traslado a la zona de incubación; se acuerda un calendario de turnos para el seguimiento diario.',

@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
 import { useReveal } from '../../hooks/useReveal';
-import type { HomeSectionId, SupportImageRef } from '../../types';
+import type { SupportImageRef } from '../../types';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import { SupportImage } from '../SupportImage/SupportImage';
 import styles from './Section.module.css';
 
 interface SectionProps {
-  id: HomeSectionId;
+  /** Unique section id (anchor). */
+  id: string;
   title: string;
   eyebrow?: string;
   intro?: string;
@@ -42,7 +43,7 @@ export function Section({
           <div className={styles.main}>{children}</div>
           {image && (
             <div className={styles.aside}>
-              <SupportImage name={image.image} alt={image.alt} />
+              <SupportImage name={image.image} alt={image.alt} folder={image.folder} />
             </div>
           )}
         </div>
