@@ -1,5 +1,7 @@
 import { ui } from '../../data/ui';
 import type { Activity } from '../../types';
+import { getActivityImage, placeholderImage } from '../../utils/getActivityImage';
+import { ImageWithFallback } from '../ImageWithFallback/ImageWithFallback';
 import { Modal } from '../Modal/Modal';
 import { WeekBadge } from '../WeekBadge/WeekBadge';
 import styles from './ActivityModal.module.css';
@@ -28,6 +30,7 @@ function ListValue({ items }: { items: string[] }) {
 export function ActivityModal({ activity, onClose }: ActivityModalProps) {
   if (!activity) return null;
   const fields = ui.activityFields;
+  const image = getActivityImage(activity.image);
 
   return (
     <Modal
@@ -36,6 +39,15 @@ export function ActivityModal({ activity, onClose }: ActivityModalProps) {
       title={activity.title}
       eyebrow={<WeekBadge week={activity.week} />}
     >
+      <ImageWithFallback
+        className={styles.media}
+        src={image.src}
+        alt={image.isPlaceholder ? '' : activity.imageAlt}
+        fallbackSrc={placeholderImage}
+        width={900}
+        height={600}
+        loading="eager"
+      />
       <dl className={styles.details}>
         <div className={styles.item}>
           <dt>{fields.duration}</dt>

@@ -206,8 +206,11 @@ export const project: ProjectInfo = {
     },
   ],
   sectionImages: {
-    proyecto: { image: null, alt: 'Familias del corregimiento trabajando en la huerta de setas' },
-    logros: { image: null, alt: 'Bolsas de sustrato con setas orellanas en crecimiento' },
-    recursos: { image: null, alt: 'Materiales y herramientas para el cultivo de setas' },
+    proyecto: {
+      image: 'proyecto',
+      alt: 'Familias del corregimiento trabajando en la huerta de setas',
+    },
+    logros: { image: 'logros', alt: 'Bolsas de sustrato con setas orellanas en crecimiento' },
+    recursos: { image: 'recursos', alt: 'Materiales y herramientas para el cultivo de setas' },
   },
 };

@@ -2,6 +2,15 @@ import { describe, expect, it } from 'vitest';
 import { appRoutes } from './routes';
 
 describe('appRoutes', () => {
+  it('lists the pages in navbar order, with ODS after Actividades', () => {
+    expect(appRoutes.map((route) => route.id)).toEqual(['home', 'problems', 'activities', 'sdg']);
+    expect(appRoutes.find((route) => route.id === 'sdg')).toMatchObject({
+      path: '/ods',
+      label: 'ODS',
+      showInNav: true,
+    });
+  });
+
   it('has unique ids and paths', () => {
     const ids = appRoutes.map((route) => route.id);
     const paths = appRoutes.map((route) => route.path);

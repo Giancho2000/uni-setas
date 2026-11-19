@@ -23,3 +23,8 @@
 .main:focus {
   outline: none;
 }
+
+/* Reserved space while a lazily loaded page arrives. */
+.pageFallback {
+  min-height: 60vh;
+}

@@ -1,3 +1,4 @@
+import type { ImageFolder } from '../utils/getImage';
 import type { IconKey } from './icon';
 
 export type PillarId = 'sustainability' | 'income' | 'space-use' | 'organic-input';
@@ -63,7 +64,9 @@ export interface ResourceGroup {
 export type HomeSectionId = 'proyecto' | 'logros' | 'recursos';
 
 export interface SupportImageRef {
-  /** File name inside `src/assets/images/home/`; `null` shows the placeholder. */
+  /** Image folder; defaults to `home`. */
+  folder?: ImageFolder;
+  /** Base file name inside `src/assets/images/<folder>/`; `null` shows the placeholder. */
   image: string | null;
   alt: string;
 }

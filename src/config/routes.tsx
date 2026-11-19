@@ -2,6 +2,7 @@ import type { AppRoute } from '../types';
 import { HomePage } from '../pages/Home/HomePage';
 import { ProblemsPage } from '../pages/Problems/ProblemsPage';
 import { ActivitiesPage } from '../pages/Activities/ActivitiesPage';
+import { LazySdgPage } from '../pages/Sdg/LazySdgPage';
 
 /**
  * Single source of truth for routes and navbar links (constitution III).
@@ -23,6 +24,7 @@ export const appRoutes: AppRoute[] = [
     element: <ActivitiesPage />,
     showInNav: true,
   },
+  { id: 'sdg', path: '/ods', label: 'ODS', element: <LazySdgPage />, showInNav: true },
 ];
 
 /** Returns the path of a route by id, so pages never hard-code URLs. */

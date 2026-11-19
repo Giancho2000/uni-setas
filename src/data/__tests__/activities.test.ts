@@ -19,9 +19,9 @@ describe('activities data', () => {
     ]);
   });
 
-  it('starts without real images and has the required texts', () => {
+  it('points each activity to its week photo and has the required texts', () => {
     for (const activity of activities) {
-      expect(activity.image).toBeNull();
+      expect(activity.image).toBe(`semana-${activity.week}`);
       expect(activity.imageAlt.trim()).not.toBe('');
       expect(activity.title.trim()).not.toBe('');
       expect(activity.summary.trim()).not.toBe('');

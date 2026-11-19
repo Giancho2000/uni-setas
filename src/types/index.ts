@@ -4,3 +4,4 @@ export type * from './problem';
 export type * from './activity';
 export type * from './icon';
 export type * from './slide';
+export type * from './sdg';
