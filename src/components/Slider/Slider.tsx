@@ -139,6 +139,7 @@ export function Slider({ slides, label, intervalMs = 6000, overlay }: SliderProp
                     className={styles.media}
                     src={src}
                     alt={showPlaceholder ? '' : slide.alt}
+                    style={slide.focus ? { objectPosition: slide.focus } : undefined}
                     width={IMAGE_WIDTH}
                     height={IMAGE_HEIGHT}
                     decoding="async"

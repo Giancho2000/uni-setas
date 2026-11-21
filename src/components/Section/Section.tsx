@@ -43,7 +43,12 @@ export function Section({
           <div className={styles.main}>{children}</div>
           {image && (
             <div className={styles.aside}>
-              <SupportImage name={image.image} alt={image.alt} folder={image.folder} />
+              <SupportImage
+                name={image.image}
+                alt={image.alt}
+                folder={image.folder}
+                ratio={image.ratio}
+              />
             </div>
           )}
         </div>

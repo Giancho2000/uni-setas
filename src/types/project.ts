@@ -69,6 +69,8 @@ export interface SupportImageRef {
   /** Base file name inside `src/assets/images/<folder>/`; `null` shows the placeholder. */
   image: string | null;
   alt: string;
+  /** CSS aspect-ratio of the frame (e.g. `'1 / 1'` for a square image); defaults to 3:2. */
+  ratio?: string;
 }
 
 export interface ProjectInfo {

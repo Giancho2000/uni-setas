@@ -208,9 +208,12 @@ export const project: ProjectInfo = {
   sectionImages: {
     proyecto: {
       image: 'proyecto',
-      alt: 'Familias del corregimiento trabajando en la huerta de setas',
+      alt: 'Racimo de setas orellanas frescas sobre fondo blanco',
     },
-    logros: { image: 'logros', alt: 'Bolsas de sustrato con setas orellanas en crecimiento' },
-    recursos: { image: 'recursos', alt: 'Materiales y herramientas para el cultivo de setas' },
+    logros: {
+      image: 'logros',
+      alt: 'Abundante racimo de setas orellanas creciendo desde una bolsa de sustrato',
+    },
+    recursos: { image: 'recursos', alt: 'Dos setas orellanas recién cosechadas sobre un plato' },
   },
 };

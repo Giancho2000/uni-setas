@@ -24,7 +24,10 @@ describe('image references', () => {
     expect(project.sectionImages.recursos.image).toBe('recursos');
     for (const activity of activities) expect(activity.image).toBe(`semana-${activity.week}`);
     for (const sdg of sdgs) expect(sdg.image).toBe(`ods-${sdg.id}`);
-    expect(sdgPageContent.intro.image).toMatchObject({ folder: 'sdg', image: 'intro' });
+    expect(sdgPageContent.intro.image).toMatchObject({
+      folder: 'sdg',
+      image: 'ods-agenda-2030-objetivos-desarrollo-sostenible',
+    });
   });
 
   it('resolves every reference to a real file or to the placeholder', () => {
@@ -45,9 +48,15 @@ describe('image references', () => {
     }
   });
 
-  it('uses the real activity photos already in the repository', () => {
+  it('uses the real activity, slider and Home photos already in the repository', () => {
     for (const activity of activities) {
       expect(getImage('activities', activity.image).isPlaceholder).toBe(false);
+    }
+    for (const sdg of sdgs) expect(getImage('sdg', sdg.image).isPlaceholder).toBe(false);
+    expect(getImage('sdg', sdgPageContent.intro.image.image).isPlaceholder).toBe(false);
+    for (const slide of slides) expect(getImage('slider', slide.image).isPlaceholder).toBe(false);
+    for (const ref of Object.values(project.sectionImages)) {
+      expect(getImage('home', ref.image).isPlaceholder).toBe(false);
     }
   });
 
