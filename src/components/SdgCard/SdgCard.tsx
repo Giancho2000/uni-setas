@@ -30,10 +30,11 @@ export function SdgCard({ sdg, levelLabel, onSelect, headingLevel = 3 }: SdgCard
 
   return (
     <article className={styles.card} style={accent}>
+      {/* Decorative: the SDG number and name are announced by the heading button. */}
       <ImageWithFallback
         className={styles.media}
         src={image.src}
-        alt={image.isPlaceholder ? '' : sdg.imageAlt}
+        alt=""
         fallbackSrc={placeholderImage}
         width={IMAGE_WIDTH}
         height={IMAGE_HEIGHT}
