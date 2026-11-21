@@ -45,9 +45,13 @@ describe('image references', () => {
     }
   });
 
-  it('uses the real activity photos already in the repository', () => {
+  it('uses the real activity, slider and Home photos already in the repository', () => {
     for (const activity of activities) {
       expect(getImage('activities', activity.image).isPlaceholder).toBe(false);
+    }
+    for (const slide of slides) expect(getImage('slider', slide.image).isPlaceholder).toBe(false);
+    for (const ref of Object.values(project.sectionImages)) {
+      expect(getImage('home', ref.image).isPlaceholder).toBe(false);
     }
   });
 

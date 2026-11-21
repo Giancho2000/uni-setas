@@ -13,7 +13,7 @@ El sitio publicado distingue mayúsculas y minúsculas.
 | `home/`       | `proyecto`, `logros`, `recursos`                                                             | 1200 × 800         |
 | `activities/` | `semana-1` … `semana-4`                                                                      | 900 × 600          |
 | `sdg/`        | `intro`, `ods-1`, `ods-2`, `ods-3`, `ods-4`, `ods-8`, `ods-12`, `ods-13`, `ods-15`, `ods-17` | 900 × 600          |
-| `unused/`     | fotos disponibles que hoy no se muestran (no se incluyen en el build)                        | —                  |
+| `unused/`     | fotos disponibles que hoy no se muestran; `originales/` guarda las fotos sin recortar        | —                  |
 
 Si un archivo falta o no carga, el sitio muestra `placeholder.svg` con las mismas proporciones.
 Al cambiar una foto, revisa su texto alternativo (`alt` / `imageAlt`) en el archivo de datos.
