@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { sdgLevels } from '../../data/sdg';
 import { ui } from '../../data/ui';
 import type { Sdg } from '../../types';
@@ -21,6 +22,7 @@ export function SdgModal({ sdg, onClose }: SdgModalProps) {
   const activities = resolveSdgActivities(sdg).sort((a, b) => a.week - b.week);
   const indicators = resolveSdgIndicators(sdg);
   const image = getImage('sdg', sdg.image);
+  const accent = { '--sdg-accent': `var(--sdg-${sdg.id})` } as CSSProperties;
   const labels = ui.sdg.modal;
 
   return (
@@ -35,7 +37,7 @@ export function SdgModal({ sdg, onClose }: SdgModalProps) {
         </span>
       }
     >
-      <div className={styles.content}>
+      <div className={styles.content} style={accent}>
         <ImageWithFallback
           className={styles.media}
           src={image.src}

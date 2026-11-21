@@ -25,8 +25,14 @@
   outline-offset: var(--focus-ring-offset);
 }
 
-.media {
+/* The square SDG icon sits whole on a band of its own color, so it is never cropped. */
+.card .media {
   aspect-ratio: var(--sdg-image-ratio);
+  background-color: var(--card-accent);
+}
+
+.media img {
+  object-fit: contain;
 }
 
 .content {

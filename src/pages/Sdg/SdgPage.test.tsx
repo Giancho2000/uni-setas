@@ -47,10 +47,11 @@ describe('SdgPage', () => {
       expect(link).toHaveAccessibleName(/\(abre en una pestaña nueva\)/);
     });
 
-    it('falls back to the placeholder while the intro photo is missing', () => {
+    it('shows the square Agenda 2030 wheel with its alt text', () => {
       const { container } = renderPage();
       const img = container.querySelector('#que-son img');
-      expect(img).toHaveAttribute('src', placeholderImage);
+      expect(img).not.toHaveAttribute('src', placeholderImage);
+      expect(img).toHaveAttribute('alt', sdgPageContent.intro.image.alt);
     });
   });
 

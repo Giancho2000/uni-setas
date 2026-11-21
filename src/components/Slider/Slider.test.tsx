@@ -47,11 +47,22 @@ describe('Slider', () => {
   });
 
   it('shows the placeholder when a slide has no image', () => {
-    const { container } = renderSlider();
+    const { container } = renderSlider(
+      slides.map((slide, i) => (i === 0 ? { ...slide, image: null } : slide)),
+    );
     const first = container.querySelector('img');
     expect(first).toHaveAttribute('src', placeholderImage);
     expect(first).toHaveAttribute('alt', '');
     expect(first).toHaveAttribute('loading', 'eager');
+  });
+
+  it('shows the real photo with its alt text and focal point', () => {
+    const { container } = renderSlider();
+    const first = container.querySelector('img');
+    expect(first).not.toHaveAttribute('src', placeholderImage);
+    const [slide] = slides;
+    expect(first).toHaveAttribute('alt', slide?.alt);
+    expect(first?.style.objectPosition).toBe(slide?.focus);
   });
 
   it('advances automatically every 6 seconds and loops', () => {

@@ -58,7 +58,7 @@ verifica).
 | Slider del Inicio               | `src/assets/images/slider/`     | `slide-1` … `slide-5`            | 1920 × 800 px (12:5) |
 | Imagen de apoyo de cada sección | `src/assets/images/home/`       | `proyecto`, `logros`, `recursos` | 1200 × 800 px (3:2)  |
 | Actividades (tarjeta y modal)   | `src/assets/images/activities/` | `semana-1` … `semana-4`          | 900 × 600 px (3:2)   |
-| Vista ODS                       | `src/assets/images/sdg/`        | `intro`, `ods-1`, `ods-2`, …     | 900 × 600 px (3:2)   |
+| Vista ODS                       | `src/assets/images/sdg/`        | `ods-1`, `ods-2`, … (íconos)     | cuadradas, ≥ 320 px  |
 
 Detalle completo en [`src/assets/images/README.md`](src/assets/images/README.md). Al cambiar una
 foto, revisa que su texto alternativo (`alt` o `imageAlt`) la describa. Las fotos se recortan

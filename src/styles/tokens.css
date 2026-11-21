@@ -193,7 +193,14 @@
   --sdg-17: #19486a;
   --sdg-17-on: var(--color-white);
   --card-lift: -4px;
+
+  /* ---- Navbar: active option (solid project green, white text) ---- */
+  --color-nav-active-bg: var(--color-forest);
+  --color-nav-active-bg-hover: var(--color-forest-dark);
+  --color-nav-active-text: var(--color-white);
+  --shadow-nav-active: 0 2px 8px rgb(47 93 58 / 0.25);
   --sdg-image-ratio: 3 / 2;
+  --sdg-icon-band-ratio: 2 / 1; /* modal: keeps the 320 px icons at or below their native size */
 }
 
 @media (prefers-reduced-motion: reduce) {

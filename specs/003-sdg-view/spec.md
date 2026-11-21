@@ -312,8 +312,10 @@ y que los textos son idénticos a los de la versión anterior.
   contenido de fondo no debe desplazarse.
 - **FR-019**: El color del ODS MUST NOT ser nunca el único medio de identificarlo: siempre se acompaña
   del número y el nombre en texto, y el número sobre su color MUST cumplir el contraste mínimo.
-- **FR-020**: El sitio MUST NOT usar los íconos oficiales de los ODS ni la rueda de colores oficial;
-  la identificación visual se hace con imágenes del proyecto, el número y el color.
+- **FR-020**: ~~El sitio MUST NOT usar los íconos oficiales de los ODS ni la rueda de colores
+  oficial.~~ **Cambio solicitado por el equipo (2026-11-21)**: las tarjetas y modales usan el ícono
+  oficial de cada ODS y la sección "Qué son los ODS" muestra la rueda de la Agenda 2030. El color
+  sigue sin ser el único identificador: el número y el nombre se muestran siempre en texto.
 
 **Filtro**
 

@@ -19,9 +19,15 @@
   gap: var(--space-6);
 }
 
-.media {
+/* Icon shown whole (never cropped or enlarged past its size) on a band of its SDG color. */
+.content .media {
   border-radius: var(--radius-md);
-  aspect-ratio: var(--sdg-image-ratio);
+  aspect-ratio: var(--sdg-icon-band-ratio);
+  background-color: var(--sdg-accent);
+}
+
+.media img {
+  object-fit: contain;
 }
 
 .block {
